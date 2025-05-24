@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radio La Poderosa 89.5 FM - Sullana</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff9e6;
+      color: #002244;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(to bottom, #ffffff, #ffe680);
+      padding: 60px 20px 40px;
+    }
+
+    header img {
+      width: 340px;
+      max-width: 95%;
+      display: block;
+      margin: 0 auto;
+      animation: fadeDown 1s ease;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      margin: 25px 0 10px;
+      font-size: 2.6em;
+      color: #002244;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: #003366;
+      margin: 0;
+    }
+
+    .reproductor {
+      background: #ffffff;
+      border: 2px solid #ffcc00;
+      border-radius: 15px;
+      padding: 30px 20px;
+      margin: 30px auto;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .reproductor h3 {
+      color: #cc9900;
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
+
+    audio {
+      width: 85%;
+      max-width: 400px;
+      height: 40px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .botones a {
+      background-color: #ffcc00;
+      color: #002244;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s ease;
+      flex: 1 1 200px;
+      max-width: 250px;
+    }
+
+    .botones a:hover {
+      background-color: #002244;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+    }
+
+    footer {
+      background-color: #ffcc00;
+      color: #002244;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1em; }
+      .botones a {
+        width: 100%;
+        max-width: none;
+      }
+
+      header img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header>
+    <img src="http://imgfz.com/i/b5XQLxd.png" alt="Logo Radio La Poderosa">
+    <h1>Radio La Poderosa</h1>
+    <h2>La radio que se siente - 89.5 FM en Sullana</h2>
+  </header>
+
+  <!-- Reproductor -->
+  <div class="reproductor">
+    <h3>🎧 Escúchanos en vivo</h3>
+    <audio controls autoplay>
+      <source src="http://sonic.globalstream.pro/8070/stream" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
+
+  <!-- Botones de acción -->
+  <div class="botones">
+    <a href="https://www.facebook.com/share/1ZMtdLd32N/" target="_blank">📘 Facebook</a>
+    <a href="https://wa.me/51984412853" target="_blank">🎤 WhatsApp Oyentes</a>
+    <a href="https://wa.me/51942883375" target="_blank">📢 Publicidad</a>
+    <a href="https://play.google.com/store/apps/details?id=com.innovatel.radiolapoderosa" target="_blank">📲 Descargar App</a>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    Diseñado y desarrollado por Marcony Clavijo – Innovación que conecta.
+  </footer>
+
+</body>
+</html>
