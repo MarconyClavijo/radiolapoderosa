@@ -67,3 +67,58 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .btn {
+      background: #fff;
+      color: #ff0080;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #ffbf00;
+      color: #fff;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="http://imgfz.com/i/rQgKoJ8.png" alt="Logo Radio" class="logo">
+    <h1>Mi Amigo Latino Radio</h1>
+  </header>
+
+  <div class="player-container">
+    <audio id="radioPlayer" preload="none">
+      <source src="https://sonic.globalstream.pro/8138/stream" type="audio/mpeg">
+      Tu navegador no soporta el reproductor de audio.
+    </audio>
+    <div class="buttons">
+      <button class="btn" onclick="document.getElementById('radioPlayer').play()">▶️ Play</button>
+      <button class="btn" onclick="document.getElementById('radioPlayer').pause()">⏹️ Stop</button>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a href="https://play.google.com/store/apps/details?id=com.innovatel.miamigolatino" class="btn" target="_blank">📲 Descargar App</a>
+    <a href="https://www.facebook.com/share/1TzBwUaoqN/" class="btn" target="_blank">🔗 Facebook</a>
+    <a href="https://wa.me/818030865131" class="btn" target="_blank">💬 Contacto por WhatsApp</a>
+  </div>
+
+  <footer>
+    Diseño y desarrollo web por <strong>Marcony Clavijo</strong> | Innovación que inspira © 2025
+  </footer>
+</body>
+</html>
