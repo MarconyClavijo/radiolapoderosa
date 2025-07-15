@@ -1,124 +1,193 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Amigo Latino Radio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radio La Poderosa 89.5 FM - Sullana</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #ff0080, #ffbf00);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 20px;
-      overflow-x: hidden;
-    }
-    header {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff9e6;
+      color: #002244;
       text-align: center;
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease-out;
     }
-    .logo {
-      width: 240px;
-      animation: pulse 4s infinite;
+
+    /* Splash screen */
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #fff9e6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+
+    #splash.fade-out {
+      opacity: 0;
+      pointer-events: none;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-30px); }
+
+    #splash img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    header {
+      background: linear-gradient(to bottom, #ffffff, #ffe680);
+      padding: 60px 20px 40px;
+    }
+
+    header img {
+      width: 340px;
+      max-width: 95%;
+      display: block;
+      margin: 0 auto;
+      animation: fadeDown 1s ease;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 2.5rem;
-      margin-top: 15px;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    }
-    .player-container {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-      max-width: 400px;
-      width: 100%;
-      margin: 20px auto;
-      animation: fadeIn 2s ease-out 0.5s both;
-    }
-    audio {
-      width: 100%;
-      border-radius: 10px;
-      background-color: #fff;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .btn {
-      background: #fff;
-      color: #ff0080;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 25px;
+      margin: 25px 0 10px;
+      font-size: 2.6em;
+      color: #002244;
       font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: #003366;
+      margin: 0;
+    }
+
+    .reproductor {
+      background: #ffffff;
+      border: 2px solid #ffcc00;
+      border-radius: 15px;
+      padding: 30px 20px;
+      margin: 30px auto;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .reproductor h3 {
+      color: #cc9900;
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
+
+    audio {
+      width: 85%;
+      max-width: 400px;
+      height: 40px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .botones a {
+      background-color: #ffcc00;
+      color: #002244;
+      padding: 12px 24px;
       text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s ease;
+      flex: 1 1 200px;
+      max-width: 250px;
     }
-    .btn:hover {
-      background: #ffbf00;
-      color: #fff;
+
+    .botones a:hover {
+      background-color: #002244;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
     }
+
     footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.8);
+      background-color: #ffcc00;
+      color: #002244;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1em; }
+      .botones a {
+        width: 100%;
+        max-width: none;
+      }
+
+      header img {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Splash screen con imagen -->
+  <div id="splash">
+    <img src="https://imgfz.com/i/0a28XqF.jpeg" alt="Bienvenida Radio La Poderosa" />
+  </div>
+
+  <!-- Cabecera -->
   <header>
-    <img src="http://imgfz.com/i/rQgKoJ8.png" alt="Logo Radio" class="logo">
-    <h1>Mi Amigo Latino Radio</h1>
+    <img src="https://imgfz.com/i/b5XQLxd.png" alt="Logo Radio La Poderosa">
+    <h1>Radio La Poderosa</h1>
+    <h2>La radio que se siente - 89.5 FM en Sullana</h2>
   </header>
 
-  <div class="player-container">
-    <audio id="radioPlayer" preload="none">
-      <source src="https://sonic.globalstream.pro/8138/stream" type="audio/mpeg">
-      Tu navegador no soporta el reproductor de audio.
+  <!-- Reproductor -->
+  <div class="reproductor">
+    <h3>🎧 Escúchanos en vivo</h3>
+    <audio controls autoplay>
+      <source src="https://sonic.globalstream.pro/8070/stream" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
     </audio>
-    <div class="buttons">
-      <button class="btn" onclick="document.getElementById('radioPlayer').play()">▶️ Play</button>
-      <button class="btn" onclick="document.getElementById('radioPlayer').pause()">⏹️ Stop</button>
-    </div>
   </div>
 
-  <div class="buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.innovatel.miamigolatino" class="btn" target="_blank">📲 Descargar App</a>
-    <a href="https://www.facebook.com/share/1TzBwUaoqN/" class="btn" target="_blank">🔗 Facebook</a>
-    <a href="https://wa.me/818030865131" class="btn" target="_blank">💬 Contacto por WhatsApp</a>
+  <!-- Botones de acción -->
+  <div class="botones">
+    <a href="https://www.facebook.com/share/1ZMtdLd32N/" target="_blank">📘 Facebook</a>
+    <a href="https://wa.me/51925865545" target="_blank">🎤 WhatsApp Oyentes</a>
+    <a href="https://wa.me/51912807362" target="_blank">📢 Publicidad</a>
+    <a href="https://play.google.com/store/apps/details?id=com.innovatel.radiolapoderosa" target="_blank">📲 Descargar App</a>
   </div>
 
+  <!-- Pie de página -->
   <footer>
-    Diseño y desarrollo web por <strong>Marcony Clavijo</strong> | Innovación que inspira © 2025
+    Diseñado y desarrollado por Marcony Clavijo – Innovación que conecta.
   </footer>
+
+  <script>
+    // Espera 3 segundos y luego desvanece el splash
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const splash = document.getElementById('splash');
+        splash.classList.add('fade-out');
+        // Luego elimina el splash del DOM para liberar memoria
+        splash.addEventListener('transitionend', () => splash.remove());
+      }, 3000); // Duración en ms
+    });
+  </script>
+
 </body>
 </html>
