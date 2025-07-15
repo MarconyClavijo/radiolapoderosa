@@ -13,30 +13,6 @@
       text-align: center;
     }
 
-    /* Splash screen */
-    #splash {
-      position: fixed;
-      inset: 0;
-      background: #fff9e6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.8s ease;
-    }
-
-    #splash.fade-out {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    #splash img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
     header {
       background: linear-gradient(to bottom, #ffffff, #ffe680);
       padding: 60px 20px 40px;
@@ -143,14 +119,9 @@
 </head>
 <body>
 
-  <!-- Splash screen con imagen -->
-  <div id="splash">
-    <img src="https://imgfz.com/i/0a28XqF.jpeg" alt="Bienvenida Radio La Poderosa" />
-  </div>
-
   <!-- Cabecera -->
   <header>
-    <img src="https://imgfz.com/i/b5XQLxd.png" alt="Logo Radio La Poderosa">
+    <img src="http://imgfz.com/i/b5XQLxd.png" alt="Logo Radio La Poderosa">
     <h1>Radio La Poderosa</h1>
     <h2>La radio que se siente - 89.5 FM en Sullana</h2>
   </header>
@@ -159,7 +130,7 @@
   <div class="reproductor">
     <h3>🎧 Escúchanos en vivo</h3>
     <audio controls autoplay>
-      <source src="https://sonic.globalstream.pro/8070/stream" type="audio/mpeg">
+      <source src="http://sonic.globalstream.pro/8070/stream" type="audio/mpeg">
       Tu navegador no soporta el elemento de audio.
     </audio>
   </div>
@@ -176,18 +147,6 @@
   <footer>
     Diseñado y desarrollado por Marcony Clavijo – Innovación que conecta.
   </footer>
-
-  <script>
-    // Espera 3 segundos y luego desvanece el splash
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const splash = document.getElementById('splash');
-        splash.classList.add('fade-out');
-        // Luego elimina el splash del DOM para liberar memoria
-        splash.addEventListener('transitionend', () => splash.remove());
-      }, 3000); // Duración en ms
-    });
-  </script>
 
 </body>
 </html>
